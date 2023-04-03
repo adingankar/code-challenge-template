@@ -1,0 +1,11 @@
+Extra Credit - Deployment
+
+-------------------------
+
+(Optional.) Assume you are asked to get your code running in the cloud using AWS. What tools and AWS services would you use to deploy the API, database, and a scheduled version of your data ingestion code? Write up a description of your approach.
+
+For this use if using AWS we can firstly store the data in S3 and from S3 we can then load it into Redshift if we need to maintain a data warehouse where in the data is dynamic.
+If not we can then surely make use of Amazon RDS with hosted postgreSQL as this use case looks like from the perspective of supporting OLTP applications.
+
+We can use make use Lambda function which will automatically load the data from s3 to RDS and will triggered by cloud watch which acts as the logging mechanism.
+The replication of REST API is API gateway/Elastic Beanstalk which can be easily used with containerization with docker using ECS.
