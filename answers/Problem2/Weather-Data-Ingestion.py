@@ -3,6 +3,7 @@ import pandas as pd
 import mysql.connector as mysql
 import time
 
+#function defination for calculating the timestamp(time required for ingesting the data)
 def current_time_stamp():
     
     query = "SELECT CURRENT_TIMESTAMP"
@@ -11,11 +12,12 @@ def current_time_stamp():
     cursor.execute(query)
     time = cursor.fetchall()[0][0]
     return time
-    
+#database connection request    
 mydb = mysql.connect(host="127.0.0.1", database = 'corteva_challenge_database',user="root", passwd="adina@2295")
-    
+#folder path for loading wx-data    
 folder_path = "C:\\Data-Import\\wx_data\\"
 
+#The below mentioned fo loop does reads the data from Wx-data using pandas into a csv format and created a dataframe.
 for filename in os.listdir(folder_path):
     
     start_time = current_time_stamp()
@@ -34,6 +36,7 @@ for filename in os.listdir(folder_path):
     number_records= 0
     cursor= mydb.cursor()
     
+    #Iterrows helps to optimise the query performance while fetching rows from a table/dataframe.
     for i,row in weather_data_tmp.iterrows():
         query = "SELECT * from Weather where id=(%s)"
         cursor.execute(query,(row[0],))
@@ -49,7 +52,5 @@ for filename in os.listdir(folder_path):
 
         query = "INSERT INTO Corteva_Challenge_Database.Logs VALUES (%s,%s,%s,%s)" 
         cursor.execute(query, ("Weather_"+filename, start_time, end_time,number_records))
-
-
-    print(filename)
+    #to commit the final state of the database for reflection of the data stored in the database.    
     mydb.commit()
