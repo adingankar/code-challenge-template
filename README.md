@@ -24,12 +24,10 @@ Yield
 ![image](https://user-images.githubusercontent.com/78924701/229616490-b70bd546-5177-41ac-931a-aa668e3d9eb5.png)
 
 
-Approach of execution : 
-Created databases : weather, yeild , statistics and logs for each of the records respectively.
+Approach of the project:
+I I have created three databases named weather(which will be storing the data from wx_data), yeild(this is used to store the yx_data), statistics(this table is used to store the statistics calculations like the average max temperature, average min temperature & total accumulated precipitation) & logs data which is used to store the 
+start and end time commit records for yeild and weather data entries)
 
-Created a seperate script for data ingestion which loads the txt records from wx_data and yx_data folder to the weather and yeild databases.
+II Further more I have created Unit test to validate the results generated from the end-points of restapi.
 
-Created a flask api which unit tests to be validated since the data did had a check for duplicate records and does not contain invalid parameters, so unit test are calculated on the factors of empty strings passed to the json.
-
-Containerized the flask application by using docker container.
-
+III I have made use of flask for api configurations and I have created two functions for api/weather and api/weather/stats checkpoint, To containerize which I have used Docker.
