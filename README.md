@@ -20,6 +20,7 @@ Each line in the file contains 2 records separated by tabs:
 
 Year (YYYYMMDD format)
 Yield
+
 ![image](https://user-images.githubusercontent.com/78924701/229616490-b70bd546-5177-41ac-931a-aa668e3d9eb5.png)
 
 
