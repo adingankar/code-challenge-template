@@ -20,8 +20,8 @@ Each line in the file contains 2 records separated by tabs:
 
 Year (YYYYMMDD format)
 Yield
-![image](https://user-images.githubusercontent.com/78924701/229615437-1365105f-7208-4564-b8a2-e4ea2490e230.png)
-![image](https://user-images.githubusercontent.com/78924701/229615651-5feb2279-3764-47e6-b015-1bb00de974fe.png)
+![image](https://user-images.githubusercontent.com/78924701/229616490-b70bd546-5177-41ac-931a-aa668e3d9eb5.png)
+
 
 Approach of execution : 
 Created databases : weather, yeild , statistics and logs for each of the records respectively.
