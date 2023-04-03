@@ -26,7 +26,10 @@ Yield
 
 Approach of execution : 
 Created databases : weather, yeild , statistics and logs for each of the records respectively.
+
 Created a seperate script for data ingestion which loads the txt records from wx_data and yx_data folder to the weather and yeild databases.
+
 Created a flask api which unit tests to be validated since the data did had a check for duplicate records and does not contain invalid parameters, so unit test are calculated on the factors of empty strings passed to the json.
+
 Containerized the flask application by using docker container.
 
