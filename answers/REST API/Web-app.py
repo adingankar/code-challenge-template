@@ -1,6 +1,4 @@
 from flask import Flask, request, jsonify
-import sqlite3
-from pathlib import Path
 
 app = Flask(__name__)
 
