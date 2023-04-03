@@ -19,7 +19,7 @@ def hello():
 @app.route("/api/weather")
 def weather_data():
     # Extract query parameters
-    station_id = "USC00110072"
+    station_id = "USC00110187"
     date = "1985-01-01"
     page = 1
     per_page = 5
